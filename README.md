@@ -35,7 +35,7 @@ python train.py --name audioVisual --hdf5_path /your_root/hdf5/soloduet/ --scene
 ### Co-Separation testing
 Use the following command to mix and separate two solo videos using the your trained co-separation model or the [shared model](https://drive.google.com/drive/folders/1K9DdSu7fK0rVmVbdvTgulOwDQHzxbBsK?usp=sharing) pre-trained on MUSIC dataset:
 ```
-python test.py --video1_name X3GbAKww1KI_3 --video2_name XTKxjzg1xwM_7 --visual_pool conv1x1 --unet_num_layers 7 --data_path /your_data_root/MUSIC_dataset/solo/ --weights_visual pretrained_models/audioVisual/visual_latest.pth --weights_unet pretrained_models/audioVisual/unet_latest.pth --weights_classifier pretrained_models/audioVisual/classifier_latest.pth  --num_of_object_detections_to_use 5 --with_additional_scene_image --scene_path /your_root/hdf5/ADE.h5 --output_dir_root results/
+python test.py --video1_name video1_name --video2_name video2_name --visual_pool conv1x1 --unet_num_layers 7 --data_path /your_data_root/MUSIC_dataset/solo/ --weights_visual pretrained_models/audioVisual/visual_latest.pth --weights_unet pretrained_models/audioVisual/unet_latest.pth --weights_classifier pretrained_models/audioVisual/classifier_latest.pth  --num_of_object_detections_to_use 5 --with_additional_scene_image --scene_path /your_root/hdf5/ADE.h5 --output_dir_root results/
 ```
 
 ### Acknowlegements
