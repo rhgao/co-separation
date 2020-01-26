@@ -38,7 +38,7 @@ Use the following command to mix and separate two solo videos using the your tra
 python test.py --video1_name video1_name --video2_name video2_name --visual_pool conv1x1 --unet_num_layers 7 --data_path /your_data_root/MUSIC_dataset/solo/ --weights_visual pretrained_models/audioVisual/visual_latest.pth --weights_unet pretrained_models/audioVisual/unet_latest.pth --weights_classifier pretrained_models/audioVisual/classifier_latest.pth  --num_of_object_detections_to_use 5 --with_additional_scene_image --scene_path /your_root/hdf5/ADE.h5 --output_dir_root results/
 ```
 
-### Evaluate Separation Results
+### Evaluate separation results
 Use the following command to obtain the SDR, SIR, SAR of the separation results:
 ```
 python evaluateSeparation.py --results_dir /your_separation_output_dir
