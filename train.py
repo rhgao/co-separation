@@ -215,6 +215,9 @@ def get_coseparation_loss(output, opt, loss_coseparation):
 opt = TrainOptions().parse()
 opt.device = torch.device("cuda")
 
+if opt.with_additional_scene_image:
+    opt.number_of_classes = opt.number_of_classes + 1
+
 #construct data loader
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
@@ -249,8 +252,6 @@ net_unet = builder.build_unet(
         input_nc=opt.unet_input_nc,
         output_nc=opt.unet_output_nc,
         weights=opt.weights_unet)
-if opt.with_additional_scene_image:
-    opt.number_of_classes = opt.number_of_classes + 1
 net_classifier = builder.build_classifier(
         pool_type=opt.classifier_pool,
         num_of_classes=opt.number_of_classes,
